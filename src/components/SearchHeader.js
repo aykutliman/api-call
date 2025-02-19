@@ -2,9 +2,9 @@ import { useState } from "react";
 
 function SearchHeader({ search }) {
   const [valueInput, setValue] = useState("");
+
   const handleFormSubmit = (event) => {
     event.preventDefault();
-    debugger;
     search(valueInput);
   };
 
@@ -16,7 +16,10 @@ function SearchHeader({ search }) {
     <div className="searchDiv">
       <form onSubmit={handleFormSubmit}>
         <label>Ne Arıyorsunuz?</label>
-        <input value={valueInput} onChange={handleChange} />
+        <div className="searchDivInput">
+          <input value={valueInput} onChange={handleChange} />
+          <button type="submit">Ara</button>
+        </div>
       </form>
     </div>
   );
